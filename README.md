@@ -8,6 +8,7 @@ Unblock Me is a grid puzzle game created using jquery. The object of the game is
 ### Process
 In order to create Unblock Me, I began by creating a simple square grid 3x3, 4x4, or 5x5 blocks. I then added buttons to each box except the empty box(es).  I created one function that could create a board of any dimensions. I decided to allow the user to input values that get passed to this function to create the board. Each box has four buttons corresponding to the four directions it can move. I used only one js file, but it was simple enough that one was sufficient.
 
+
 ### Roadblocks
 One roadblock I faced was created when I tried to refresh the board and allow the user to play multiple times. When I refreshed the board, instead of removing the board I hid it and created a new one. This caused problems because the user sees the new board, but the code was still accessing the old board. I eventually realized the issue and switched from hiding the board to removing it.
 

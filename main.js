@@ -17,6 +17,9 @@ $('#dimension-submit').on('click', function(){
   if(boardSize1 < 2 || boardSize2 < 2){
     alert('Board dimensions must be at least 2');
   }
+  else if(boardSize1 > 10 || boardSize2 > 10){
+    alert('Woah there, how about we stick to dimensions less than 10');
+  }
   else{
     createBoard(boardSize1, boardSize2);
   }
