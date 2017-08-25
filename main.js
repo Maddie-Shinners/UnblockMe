@@ -17,8 +17,8 @@ $('#dimension-submit').on('click', function(){
   if(boardSize1 < 2 || boardSize2 < 2){
     alert('Board dimensions must be at least 2');
   }
-  else if(boardSize1 > 10 || boardSize2 > 10){
-    alert('Woah there, how about we stick to dimensions less than 10');
+  else if(boardSize1 > 8 || boardSize2 > 8){
+    alert('Woah there, how about we stick to smaller boards for now.');
   }
   else{
     createBoard(boardSize1, boardSize2);
@@ -45,8 +45,8 @@ var clickCounter = 0;
 var createBoard = function(dim1, dim2){
   $('#choose').hide();
   var $table = $("<table align='center'>");
-  var boxHeight = 496/dim1;
-  var boxWidth = 496/dim1;
+  var boxHeight = 700/dim1;
+  var boxWidth = 700/dim1;
 
 //random indices for special block
   var index1Block = Math.floor(Math.random()*dim1);
