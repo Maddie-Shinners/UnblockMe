@@ -4,8 +4,7 @@ var $bottomRight;
 var bottomRightStatus;
 var highScores = [];
 var gameCount = 0;
-
-
+var highScoresListShown = false;
 
 //Get user values and use them to create game board
 $('#dimension-submit').on('click', function(){
@@ -62,7 +61,9 @@ var createBoard = function(dim1, dim2){
     numEmptyBoxes = Math.floor(numEmptyBoxes/3);
   }
   console.log(`numEmptyBoxes: ${numEmptyBoxes}`);
-
+  if(numEmptyBoxes === 0){
+    numEmptyBoxes = 1;
+  }
 //assign random locations for empty boxes
   for(let i = 0; i < numEmptyBoxes; i++){
     var boxLocation = {
@@ -325,58 +326,62 @@ $('table').css('filter', 'blur(5px)');
     $('body').append($formDiv);
 
 
-
     $('.high-scores').on('submit', function(e){
       e.preventDefault();
       // var username = $('#user-name').val();
-      var username = $('#user-name').val();
-      console.log('click highscores handler');
-      console.log(`username: ${username}`);
-      var user = {
-        name: username,
-        score: clickCounter
-      }
+      if(highScoresListShown === false){
+        var username = $('#user-name').val();
+        console.log('click highscores handler');
+        console.log(`username: ${username}`);
+        var user = {
+          name: username,
+          score: clickCounter
+        }
 
 
 
-      //put usename and score in appropriate place in list so scores are ordere best to worst
-      if(gameCount===1){
-        console.log('adding first score');
-        highScores.push(user);
-        inserted = true;
-      }
-      else{
+        //put usename and score in appropriate place in list so scores are ordere best to worst
+        if(gameCount===1){
+          console.log('adding first score');
+          highScores.push(user);
+          inserted = true;
+        }
+        else{
 
-        for(let i = 0; i < gameCount-1; i++){
-          //console.log(gameCount);
-         if(clickCounter < highScores[i].score){
-            console.log('splicing');
-            highScores.splice(i, 0, user);
-            inserted = true;
-            break;
+          for(let i = 0; i < gameCount-1; i++){
+            //console.log(gameCount);
+           if(clickCounter < highScores[i].score){
+              console.log('splicing');
+              highScores.splice(i, 0, user);
+              inserted = true;
+              break;
+            }
+          }
+          if(inserted === false){
+            console.log('adding to end');
+            highScores.push(user);
           }
         }
-        if(inserted === false){
-          console.log('adding to end');
-          highScores.push(user);
+
+        console.log(`high scores: ${highScores}`);
+
+
+
+        var $scoreList = $('<ol>').text('High Scores').addClass('score-list');
+        highScores.forEach(function(item){
+          var $score = $('<li>').text(`${item.name}  :    ${item.score}`).appendTo($scoreList).addClass('score-list');
+        }) //end forEach
+
+
+
+          console.log(`highScoresListShown: ${highScoresListShown}`);
+
+          $formDiv.append($scoreList);
+          highScoresListShown = true;
         }
-      }
-
-      console.log(`high scores: ${highScores}`);
-
-
-
-      var $scoreList = $('<ol>').text('High Scores').addClass('score-list');
-      highScores.forEach(function(item){
-        var $score = $('<li>').text(`${item.name}  :    ${item.score}`).appendTo($scoreList).addClass('score-list');
-      }) //end forEach
-
-      $formDiv.append($scoreList);
-      if($formDiv.is(':hidden')){
-        $formDiv.show();
-      }
 
     })//high-scores on submit event
+
     $exitButton.on('click', resetBoard);
 //})
   // .fail(function(){
@@ -398,6 +403,6 @@ var resetBoard = function(){
   $('#blurOnWin').css('filter', 'blur(0px)' );
   $('#choose').css('display', 'block');
   clickCounter = 0;
-
+  highScoresListShown = false;
   //$('#user-name').val('');
 }
