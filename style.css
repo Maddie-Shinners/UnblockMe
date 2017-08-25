@@ -1,0 +1,291 @@
+@font-face{
+  font-family: 'block';
+  src: url(fonts/Blockletter.otf) format('opentype');
+}
+
+h1{
+  font-family: block;
+  font-size: 7em;
+  text-align: center;
+  margin-bottom: 0;
+  background: gold;  /* yellow*/
+  color: #1030ad; /*dark blue */
+  transform: rotate(-15deg);
+  width: 110%;
+  margin-left: -400px;
+}
+p{
+  font-family: block;
+  font-size: 2em;
+  text-align: center;
+  background: #1030ad;
+  color: gold;
+  margin-top: 0;
+}
+.instructions{
+  font-family: 'Catamaran', sans-serif;
+  font-size: 2em;
+  margin-left: 20%;
+  margin-right:10%;
+  margin-top: 5%;
+  letter-spacing: .1em;
+  /*transform: rotate(-15deg);*/
+}
+#x{
+  display: inline;
+  margin-bottom: 0;
+  font-size: 1em;
+}
+#dim1{
+  display: inline;
+  color: gold;
+  width: 2em;
+  height: 2em;
+  font-size: 1em;
+  text-align: center;
+}
+#dim2{
+  display: inline;
+  color: gold;
+  width: 2em;
+  height: 2em;
+  font-size: 1em;
+  text-align: center;
+}
+#dimension-submit{
+  margin-top: 0;
+}
+.dimensions{
+  background: #F16722;
+  border: 2px solid gold ;
+  color:  gold;
+  margin: 1em .5em;
+  font-size: 30px;
+  width: 10em;
+  display: inline;
+}
+#choose, ul{
+  background: #1030ad;
+  color: gold;
+}
+ul{
+  list-style-type: none;
+}
+
+body{
+  align-items: center;
+  background: #1030ad;
+}
+.table-div{
+  width: 100vw;
+  align-items: center;
+}
+table{
+  /*align-self: center;
+  margin: 100px;*/
+  /*border: 2px solid white;*/
+  /*height: 70vh;
+  width: 70vw;*/
+}
+#choose{
+  font-family: 'Raleway', sans-serif;
+  font-style: italic;
+  font-size: 2.5em;
+  text-align: center;
+  padding-top:5%;
+}
+
+.box{
+box-sizing: border-box;
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0 0;
+  border: 2px solid white;
+  /*height: 50%;
+  width: 50%;*/
+
+
+}
+
+.empty{
+  background: black;
+}
+.non-empty{
+  background: url(images/draco.jpg);
+  background-size: 100% 100%;
+}
+.special{
+  background: url(images/harry.jpg);
+  background-size: 100% 100%;
+  border: 4px solid gold;
+}
+#checkout{
+  font-size: 1.3em;
+  font-family: block;
+  color: gold;
+  margin-top: 0;
+}
+
+/*.container{
+  position: relative;
+  box-sizing: border-box;
+  border: 2px solid black;
+  padding: 0px 0px;
+  height: 500px;
+  width: 500px;
+
+}*/
+
+.arrow{
+  font-size: .7em;
+
+   height: 20%;
+   width: 20%;
+   align-content: center;
+}
+.button-container{
+  position: relative;
+  height: 90%;
+}
+
+.Up{
+  position: absolute;
+  top: 19%;
+  left: 42%;
+  background: gray;
+  color: white;
+
+}
+.Down{
+  position: absolute;
+  bottom: 12%;
+  left: 42%;
+  background: gray;
+  color: white;
+
+}
+.Right{
+  position: absolute;
+  right: 15%;
+  bottom: 39%;
+  background: gray;
+  color: white;
+
+}
+.Left{
+  position: absolute;
+  left: 17%;
+  bottom: 40%;
+  background: gray;
+  color: white;
+
+}
+
+.win{
+  position:absolute;
+  top: 15vh;
+  left: 15vw;
+  height: 70vh;
+  width: 70vw;
+  z-index: 1;
+  display: none;
+  text-align: center;
+  align-self: center;
+}
+#winGif{
+  height: 100%;
+  width: 100%;
+}
+#winMessage{
+  font-family: block;
+  background: gold;
+  padding-bottom: 12vh;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-left: 10px;
+  margin: 0;
+  letter-spacing: .5em;
+  font-size: 2em;
+  color: #1030ad;
+  border: 5px dotted #1030ad;
+
+}
+#arrow-img0{
+  height: 50px;
+  width: 50px;
+  transform: rotate(90deg);
+}
+#arrow-img1{
+  height: 50px;
+  width: 50px;
+  transform: rotate(90deg);
+}
+#arrow-img2{
+  height: 50px;
+  width: 50px;
+  transform: rotate(90deg);
+}
+#exit-button{
+  background: #1030ad;
+  border: 2px gold solid;
+  font-size: 1em;
+  height: 3em;
+  width: 11em;
+  position: absolute;
+  top: 19%;
+  left: 75%;
+  color: white;
+}
+#user-name{
+  z-index: 2;
+  align: center;
+  height: 40px;
+  width: 150px;
+  margin: 15px;
+  background: white;
+}
+.form-div{
+  position: absolute;
+  left: 32vw;
+  top: 25vh;
+  z-index: 2;
+  background:#1030ad;
+  border: 3px solid white;
+  height: auto;
+  width: 33vw;
+}
+#submit-button{
+  margin: 20px;
+  float: right;
+  color: #1030ad; ;
+  background: white;
+  border: none;
+  width: 8vw;
+  height: 5vh;
+  border-radius: 30%;
+}
+.score-list{
+  color: gold;
+  font-family: block;
+  font-size: 1.5em;
+}
+
+.loader {
+  z-index: 5;
+  position: absolute;
+  top: 50vh;
+  left: 40vw;
+  display: none;
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
